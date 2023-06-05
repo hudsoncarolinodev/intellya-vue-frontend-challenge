@@ -13,6 +13,7 @@ const router = createRouter({
     {
       path: '/user-details/:id',
       name: 'Detalhes do Usuário',
+      props:true,
       component: UserDetails
     }
   ]

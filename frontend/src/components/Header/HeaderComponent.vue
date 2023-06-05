@@ -1,18 +1,27 @@
-<script setup lang="ts">
+<script  lang="ts">
   import SearchComponent from './../Search/SearchComponent.vue'
   import MenuComponent from './../Menu/MenuComponent.vue'
   import LogoComponent from './../Logo/LogoComponent.vue'
   
-  interface IuserProps {
-    name: Number,
-    path: string,
-  }
-
-  defineProps<{
-    itens:IuserProps[],
-    
-  }>()
-
+  export default {
+    name:'HeaderComponent',
+    components:{
+      SearchComponent,
+      MenuComponent,
+      LogoComponent
+    },
+    props: {
+        itens: Array<{
+        name: string,
+        path: string,
+      }>
+    },
+    setup(props) {
+      return {
+        itensMenu: props.itens
+      }
+    }
+}
 </script>
 <style scoped>
   @import url("./style.css");
@@ -24,7 +33,7 @@
         <LogoComponent />
       </div>
       <div class="header__menu">
-        <MenuComponent :itens="itens" />
+        <MenuComponent :itens="itensMenu" />
       </div>
       <div class="header__search">
         <SearchComponent />

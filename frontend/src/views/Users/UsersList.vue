@@ -1,20 +1,26 @@
-<script setup lang="ts">
+<script  lang="ts">
 	import { computed, onBeforeMount, ref, watch } from 'vue';
 	import { useStore } from 'vuex';
-	import {type IuserProps } from '../../interface/user';
 	import TableListUsersComponent from './../../components/TableListUsers/TableListUsersComponent.vue';
 
-	const store = useStore();
-	const usersList = ref<IuserProps[]>([]);
+	export default {
+		name:'UsersList',
+		components: {
+			TableListUsersComponent,
+      	},
+		setup(){
+			const store = useStore();
+			const usersComputed = computed(() => store.getters.getUsers);
 
-	onBeforeMount(() => {
-		store.dispatch('fetchUsers');
-	});
+			onBeforeMount(() => {
+				store.dispatch('fetchUsers');
+			});
 
-	watch(() => store.getters.getUsers, (newUsers) => {
-		const users = computed(() => newUsers);
-		usersList.value = users.value;
-	});
+			return{
+				usersComputed
+			}
+		}
+	}
 </script>
 
 <template>
@@ -25,7 +31,7 @@
 				<p>Visualize os usuários que acessam sua plataforma.</p>
 			</header>
 
-			<TableListUsersComponent :usersList="usersList" />
+			<TableListUsersComponent :usersList="usersComputed" />
 		</section>
 	</main>
 </template>

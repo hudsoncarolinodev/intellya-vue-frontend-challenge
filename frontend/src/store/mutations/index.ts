@@ -8,6 +8,12 @@ const mutations = {
     SET_CURRENT_USER(state: IstoreProps, user: IuserProps) {
         state.currentUser = user;
     },
+    SET_USERS_ERROR(state: IstoreProps, error) {
+       
+    },
+    SET_USER_ERROR(state: IstoreProps, error) {
+        
+    },
 };
 
 export default mutations

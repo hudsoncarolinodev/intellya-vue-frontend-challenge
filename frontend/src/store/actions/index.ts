@@ -10,6 +10,7 @@ const actions = {
       commit('SET_USERS', data);
     } catch (error) {
       console.error('Error fetching users:', error);
+      commit('SET_USERS_ERROR', error);
     }
   },
   async fetchCurrentUser({ commit }: { commit: Commit }, id: string): Promise<void> {
@@ -20,6 +21,7 @@ const actions = {
       commit('SET_CURRENT_USER', data);
     } catch (error) {
       console.error('Error setting current user:', error);
+      commit('SET_USER_ERROR', error);
     }
   },
 };

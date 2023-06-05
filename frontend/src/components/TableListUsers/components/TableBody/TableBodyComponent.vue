@@ -1,6 +1,7 @@
 <script setup lang="ts">
+	import { computed } from 'vue';
 	import { defineProps } from 'vue';
-	import {type IuserProps } from './../../../../interface/user';
+	import { IuserProps } from './../../../../interface/user';
 	import TableRowComponent from './TableRowComponent.vue';
 
 	defineProps({
@@ -9,6 +10,7 @@
 			required: true,
 		},
 	});
+
 </script>
 
 <style scoped>

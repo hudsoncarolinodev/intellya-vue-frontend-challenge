@@ -1,12 +1,18 @@
-<script setup lang="ts">
-  interface IuserProps {
-    name: Number,
-    path: string,
+<script  lang="ts">
+  export default {
+    name:'MenuComponent',
+    props: {
+        itens: Array<{
+        name: string,
+        path: string,
+      }>
+    },
+    setup(props) {
+      return {
+        itensMenu: props.itens
+      }
+    }
   }
-  defineProps<{
-    itens:IuserProps[],
-    
-  }>()
 </script>
 <style scoped>
 @import url("./style.css");
@@ -14,7 +20,7 @@
 <template>
     <nav>
         <RouterLink 
-            v-for="item in itens" 
+            v-for="item in itensMenu" 
             :to="item.path" 
             :key="item.path">{{item.name}}</RouterLink>
     </nav>

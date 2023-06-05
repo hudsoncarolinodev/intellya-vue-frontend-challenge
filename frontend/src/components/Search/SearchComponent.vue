@@ -1,10 +1,16 @@
-<script setup lang="ts">
-
- 
-</script>
 <style scoped>
 @import url("./style.css");
 </style>
+
+<script>
+  export default{
+    name:'SearchComponent',
+
+    setup(){
+
+    }
+  }
+</script>
 <template>
   <form action="">
     <div class="search-component">

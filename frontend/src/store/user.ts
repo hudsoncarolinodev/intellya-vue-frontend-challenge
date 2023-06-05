@@ -1,10 +1,11 @@
 import mutations from './mutations'
-import actions from './actions'
-import getters from './getters'
+import actions   from './actions'
+import getters   from './getters'
+import {type IstoreProps} from './../interface/store'
 
-const state = {
+const state: IstoreProps = {
     users: [],
-    currentUser: null,
+    currentUser: undefined,
 };
 
 export default {

@@ -1,10 +1,18 @@
 {
   "compilerOptions": {
-    "types": ["node"],
     "allowJs": true,
-    // other options...
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "types": ["@types/vuex","node"],
+    "esModuleInterop": true,
+    "moduleResolution":"node",
   },
   "files": [],
+  "include": [ "src/**/*.ts",
+  "src/**/*.vue",
+  "src/vuex.d.ts"],
+  "exclude": ["node_modules"],
   "references": [
     {
       "path": "./tsconfig.node.json"

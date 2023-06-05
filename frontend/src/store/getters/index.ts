@@ -1,7 +1,11 @@
-import {type IuserProps } from "@/interface/user";
+import {type IstoreProps} from './../../interface/store'
 const getters = {
-    getUsers: (state) => {
+    getUsers: (state:IstoreProps) => {
         return state.users;
+    },
+
+    getUser: (state:IstoreProps) => {
+        return state.currentUser;
     },
 };
 
