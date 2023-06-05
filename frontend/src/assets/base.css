@@ -49,3 +49,7 @@ body {
 .header-page{
   margin: 40px 0;
 }
+.validation-error-empyt{
+  text-align: center;
+  padding:10px;
+}

@@ -1,51 +1,26 @@
 <script setup lang="ts">
+	import { defineProps } from 'vue';
+	import {type IuserProps } from './../../../../interface/user';
+	import TableRowComponent from './TableRowComponent.vue';
 
+	defineProps({
+		usersList: {
+			type: Array as () => IuserProps[],
+			required: true,
+		},
+	});
 </script>
-<style scoped>
-  @import url("./style.css");
-</style>
-<template>
-  <div class="tableUser__body">
-      <ul class="listUser">
-        <li class="listUser__item">
-            <div class="listUser__column">
-              <h3>1</h3>
-            </div>
-            <div class="listUser__column">
-              <h3>João das Couves</h3>
-            </div>
-            <div class="listUser__column">
-              <h3>carolinohudson@gmail.com</h3>
-            </div>
-            <div class="listUser__column">
-              <h3>Membro</h3>
-            </div>
-            <div class="listUser__column">
-              <h3> <RouterLink 
-              to="/user-details" 
-              >Visualizar</RouterLink></h3>
-            </div>
-        </li>
-        <li class="listUser__item">
-            <div class="listUser__column">
-              <h3>1</h3>
-            </div>
-            <div class="listUser__column">
-              <h3>João das Couves</h3>
-            </div>
-            <div class="listUser__column">
-              <h3>carolinohudson@gmail.com</h3>
-            </div>
-            <div class="listUser__column">
-              <h3>Membro</h3>
-            </div>
-            <div class="listUser__column">
-              <h3> <RouterLink 
-              to="/user-details" 
-              >Visualizar</RouterLink></h3>
-            </div>
-        </li>
-      </ul>
-    </div>
-</template>
 
+<style scoped>
+	@import url("./style.css");
+</style>
+
+<template>
+	<div class="tableUser__body">
+		<ul class="listUser" v-if="usersList.length">
+			<TableRowComponent v-for="user in usersList" :key="user.id.toString()" :user="user" />
+		</ul>
+
+		<div class="validation-error-empyt" v-else>Nenhum usuário encontrado.</div>
+	</div>
+</template>
