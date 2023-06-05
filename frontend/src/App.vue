@@ -4,14 +4,15 @@
 </script>
 
 <template>
-  
-  <HeaderComponent 
+  <div>
+    <HeaderComponent 
     :itens="[
     { name: 'Usuários', path: '/' }
     ]"
    
   />
-
+  <router-view></router-view>
+  </div>
 </template>
 
 <script lang="ts">

@@ -1,0 +1,19 @@
+header.tableUser__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-bottom: solid #ccc 1px;
+    background-color: rgb(249 250 251);
+}
+
+header.tableUser__header .header__column{
+   flex: 4;
+}
+header.tableUser__header .header__column:first-child{
+   flex: 1;
+}
+
+header.tableUser__header .header__column h2{
+    font-weight: bold;
+    font-size: 14px;
+ }

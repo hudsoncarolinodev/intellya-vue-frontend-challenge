@@ -1,0 +1,9 @@
+nav{
+    padding-top: 30px;
+    display: flex;
+} 
+nav a{
+   color: #000;
+   text-decoration: none;
+   border-bottom: solid 2px #E4CA85;
+} 

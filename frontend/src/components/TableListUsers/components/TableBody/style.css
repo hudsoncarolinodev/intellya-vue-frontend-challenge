@@ -1,0 +1,29 @@
+div.tableUser__body .listUser{
+
+}
+
+div.tableUser__body .listUser__item{
+    display: flex;
+    padding: 15px 20px;
+}
+
+div.tableUser__body .listUser .listUser__column{
+   flex: 4;
+}
+div.tableUser__body .listUser .listUser__column:first-child{
+   flex: 1;
+}
+
+div.tableUser__body .listUser .listUser__column h3{
+    color: #7c7c7c;
+    font-size: 14px;
+}
+
+div.tableUser__body .listUser .listUser__column h3 a{
+    color:#b09e71
+}
+
+div.tableUser__body .listUser .listUser__column:last-child h3{
+   text-align: right;
+}
+

@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import SearchComponent from './../Search/SearchComponent.vue'
+  import MenuComponent from './../Menu/MenuComponent.vue'
+  import LogoComponent from './../Logo/LogoComponent.vue'
   
   interface IuserProps {
     name: Number,
@@ -12,24 +14,21 @@
   }>()
 
 </script>
-<style>
+<style scoped>
   @import url("./style.css");
 </style>
 <template>
   <header>
-    <div class="header__logo">
-      <img src="./../../assets/logo.png" alt="">
-    </div>
-    <div class="header__menu">
-        <nav>
-            <RouterLink 
-              v-for="item in itens" 
-              :to="item.path" 
-              :key="item.path">{{item.name}}</RouterLink>
-        </nav>
-    </div>
-    <div class="header__search">
-      <SearchComponent />
+    <div class="container">
+      <div class="header__logo">
+        <LogoComponent />
+      </div>
+      <div class="header__menu">
+        <MenuComponent :itens="itens" />
+      </div>
+      <div class="header__search">
+        <SearchComponent />
+      </div>
     </div>
   </header>
 </template>

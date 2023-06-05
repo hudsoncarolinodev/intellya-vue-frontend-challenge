@@ -2,10 +2,15 @@
 
  
 </script>
-  
+<style scoped>
+@import url("./style.css");
+</style>
 <template>
-  <div class="search-component">
-    <button>Pesquisar</button>
-    <input type="text" placeholder="Buscar">
-  </div>
+  <form action="">
+    <div class="search-component">
+      <button>Pesquisar</button>
+      <input type="text" placeholder="Buscar">
+    </div>
+  </form>
 </template>
+

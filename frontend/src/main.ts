@@ -10,7 +10,6 @@ import userModule from './store/user';
 const store = createStore({
     modules: {
       user: userModule,
-     
     },
 });
 

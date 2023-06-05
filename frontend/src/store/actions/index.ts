@@ -12,7 +12,7 @@ const actions = {
       console.error('Error fetching users:', error);
     }
   },
-  async setCurrentUser({ commit }: { commit: Commit }, id: string): Promise<void> {
+  async fetchCurrentUser({ commit }: { commit: Commit }, id: string): Promise<void> {
     try {
       const response = await getUserById(id);
       const { data } = response;
