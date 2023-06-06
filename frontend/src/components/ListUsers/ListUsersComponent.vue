@@ -1,15 +1,15 @@
 
 <script lang="ts">
    import { computed } from 'vue';
-   import TableHeaderComponent from './components/TableHeader/TableHeaderComponent.vue';
-   import TableBodyComponent from './components/TableBody/TableBodyComponent.vue';
+   import ListHeaderComponent from './components/ListHeader/ListHeaderComponent.vue';
+   import ListBodyComponent from './components/ListBody/ListBodyComponent.vue';
    import { useStore} from 'vuex';
    
    export default {
-      name:'TableListUsersComponent',
+      name:'ListUsersComponent',
       components: {
-         TableHeaderComponent,
-         TableBodyComponent,
+         ListHeaderComponent,
+         ListBodyComponent,
       },
 
       setup() {
@@ -27,8 +27,8 @@
 </style>
 <template>
    <section class="tableUser">
-      <TableHeaderComponent/>
-      <TableBodyComponent :usersList="usersComputed"/>
+      <ListHeaderComponent/>
+      <ListBodyComponent :usersList="usersComputed"/>
    </section>
 </template>
 

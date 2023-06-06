@@ -2,7 +2,7 @@
 	import { computed } from 'vue';
 	import { defineProps } from 'vue';
 	import { IuserProps } from './../../../../interface/user';
-	import TableRowComponent from './TableRowComponent.vue';
+	import ListRowComponent from './ListRowComponent.vue';
 
 	defineProps({
 		usersList: {
@@ -20,7 +20,7 @@
 <template>
 	<div class="tableUser__body">
 		<ul class="listUser" v-if="usersList.length">
-			<TableRowComponent v-for="user in usersList" :key="user.id.toString()" :user="user" />
+			<ListRowComponent v-for="user in usersList" :key="user.id.toString()" :user="user" />
 		</ul>
 
 		<div class="validation-error-empyt" v-else>Nenhum usuário encontrado.</div>

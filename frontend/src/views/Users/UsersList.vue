@@ -1,12 +1,12 @@
 <script  lang="ts">
 	import { computed, onBeforeMount, ref, watch } from 'vue';
 	import { useStore } from 'vuex';
-	import TableListUsersComponent from './../../components/TableListUsers/TableListUsersComponent.vue';
+	import ListUsersComponent from './../../components/ListUsers/ListUsersComponent.vue';
 
 	export default {
 		name:'UsersList',
 		components: {
-			TableListUsersComponent,
+			ListUsersComponent,
       	},
 		setup(){
 			const store = useStore();
@@ -31,7 +31,7 @@
 				<p>Visualize os usuários que acessam sua plataforma.</p>
 			</header>
 
-			<TableListUsersComponent :usersList="usersComputed" />
+			<ListUsersComponent :usersList="usersComputed" />
 		</section>
 	</main>
 </template>
