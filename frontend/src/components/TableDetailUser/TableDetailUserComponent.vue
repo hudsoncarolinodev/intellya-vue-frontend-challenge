@@ -1,21 +1,30 @@
-<script setup lang="ts">
-	import {watch,ref } from 'vue';
+<script  lang="ts">
 	import { type IuserProps } from "../../interface/user";
-	import { useStore } from 'vuex';
+
 	import formatActive from './../../utils/formatActive'
 	import formatDateTime from './../../utils/formatDateTime'
 	import Dictionary from './../../utils/Dictionary'
 
-	const user = ref<IuserProps>();
-	const store = useStore();
-
-	watch(
-	() => store.getters.getUser,
-		(newUser) => {
-			user.value = newUser;
-		},
-		{ immediate: true }
-	);
+	export default {
+      name:'TableDetailUserComponent',
+      components: {
+       
+      },
+      props:{
+            user: {
+            type: Object as () => IuserProps,
+            required: true,
+		   },
+      },
+	   
+	  data(){
+		return {
+			Dictionary:Dictionary,
+			formatDateTime:formatDateTime,
+			formatActive:formatActive,
+		}
+	  }
+   }
 	
 </script>
 

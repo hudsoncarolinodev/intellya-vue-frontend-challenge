@@ -1,6 +1,4 @@
 <script setup lang="ts">
-	import { computed } from 'vue';
-	import { defineProps } from 'vue';
 	import { IuserProps } from './../../../../interface/user';
 	import ListRowComponent from './ListRowComponent.vue';
 

@@ -7,7 +7,7 @@
 
   const store = useStore();
   const route = useRoute();
-  const currentUser = ref<IuserProps[]>([]);
+  const currentUser = ref<IuserProps>();
   const id = ref<string | string[]>();
   
   onBeforeMount(() => {
@@ -15,13 +15,14 @@
     fetchUser();
   });
 
+  const fetchUser = () => {
+    store.dispatch('fetchCurrentUser', id.value);
+  };
+
   watch(() => store.getters.getUser, (user) => {
     currentUser.value = user;
   });
 
-  const fetchUser = () => {
-    store.dispatch('fetchCurrentUser', id.value);
-  };
 </script>
 
 <template>
